@@ -15,7 +15,7 @@
         ?>
         <h1 class="hidden">FINANCE UNIVERSE</h1>
         <p>Spletna učilnica</p>
-        <a href="posts_stran.php"><button>Read 🡺</button></a>
+        <a href="posts_stran.php"><button>Preberi 🡺</button></a>
         
     </div>
 </div>
