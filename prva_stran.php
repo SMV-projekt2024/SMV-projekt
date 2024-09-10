@@ -14,9 +14,6 @@
             }
         ?>
 
-        <h1 class="hidden">Spletna Ucilnica LLF</h1>
-        <p>Explore The Finance World</p>
-        <a href="posts_stran.php"><button>Read 🡺</button></a>
 
         <h1 class="hidden">FINANCE UNIVERSE</h1>
         <p>Spletna ucilnica</p>
