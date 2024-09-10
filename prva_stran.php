@@ -13,9 +13,15 @@
                 echo "<h2>Welcome, " . $_SESSION["username"] . "</h2>";
             }
         ?>
+<<<<<<< HEAD
         <h1 class="hidden">Spletna Ucilnica LLF</h1>
         <p>Explore The Finance World</p>
         <a href="posts_stran.php"><button>Read 🡺</button></a>
+=======
+        <h1 class="hidden">FINANCE UNIVERSE</h1>
+        <p>Spletna ucilnica</p>
+        <a href="posts_stran.php"><button>Preberi 🡺</button></a>
+>>>>>>> e4ea257270b397cf9eda75d08a05c17bd2a48e8c
         
     </div>
 </div>
