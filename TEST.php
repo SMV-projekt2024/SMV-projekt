@@ -19,6 +19,7 @@
             .catch( error => {
                 console.error( error );
             } );
+            // SPREMENJENA VERZIJA
     </script>
 </body>
 </html>
