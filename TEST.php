@@ -21,7 +21,7 @@
             } );
             // SPREMENJENA VERZIJA
             <p>
-                Testni odstavek
+                Testni odstavek. Z aplikacijo GitHub
             <p>
     </script>
 </body>
