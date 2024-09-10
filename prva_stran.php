@@ -13,7 +13,7 @@
                 echo "<h2>Welcome, " . $_SESSION["username"] . "</h2>";
             }
         ?>
-        <h1 class="hidden">Spletna Ucilnica </h1>
+        <h1 class="hidden">Spletna Ucilnica LLF</h1>
         <p>Explore The Finance World</p>
         <a href="posts_stran.php"><button>Read 🡺</button></a>
         
