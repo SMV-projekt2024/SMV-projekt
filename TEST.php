@@ -20,6 +20,9 @@
                 console.error( error );
             } );
             // SPREMENJENA VERZIJA
+            <p>
+                Testni odstavek
+            <p>
     </script>
 </body>
 </html>
