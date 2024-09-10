@@ -1,0 +1,775 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-image: url(img/DarkBackground.jpg);
+   /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* -------------------HEADER------------------ */
+.logo{
+    display: block;
+    width: 230px;
+}
+nav{
+    background: linear-gradient(to right, #040319 8%, #0e233d 100%);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li{
+    height: 50px;
+}
+
+nav a{
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0 30px;
+    transition: 0.3s ease-out;
+}
+nav a:hover{
+    color: #F5B82E;
+}
+nav li:first-child {
+    margin-right: auto;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 90;
+    background-color: #00000038;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin-right: -250px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    backdrop-filter: blur(10px);
+    transition: 1s ease-out;
+}
+
+.sidebar.close{
+    margin-right: -250px;
+}
+.sidebar.open{
+    margin-right: 0;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+.menuButton{
+    display: none;
+}
+/*------------------LOGIN BOX----------------------*/
+.zunanjiLogin{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 400px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.321);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: none;
+    
+}
+.formBox{
+    width: 100%;
+    padding: 40px;
+}
+.formBox h2{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+.inputBox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+.inputBox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.inputBox input:focus~label, 
+.inputBox input:valid~label{
+    top: -5px;
+}
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 35px 0 5px;
+}
+.inputBox .iconLogin{
+    position: absolute;
+    right: 8px;
+    font-size: 1rem;
+    line-height: 60px;
+}
+.loginButton{
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.closeLogin{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+    /*font-size: 1.8rem;
+    font-weight: 800;*/
+}
+/*--------------Message Popup BOX-----------------*/
+.MessagePopup{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 300px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+    text-align: right;
+    overflow: hidden;
+}
+.closeMessage{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+.MessegeBox{
+    position: absolute;
+    top: 40%;
+    text-align: center;
+    width: 100%;
+}
+/*-------------------FOOTER----------------------*/
+.footerContainer{
+    width: 100%;
+    padding: 70px 0 20px ;
+    /*background: linear-gradient(to right, #050a1e 8%, #113350 100%);*/
+    background: linear-gradient(to bottom,  #113350 0%, #050a1e 50%);
+}
+.socials{
+    display: flex;
+    justify-content: center;
+}
+.socials a{
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 80%;
+    background-color: #F5B82E;
+}
+.socials a:hover{
+    background-color: #2d2d2d;
+    background: transparent;
+    transition: 0.8s ease-out;
+}
+.footerLinks{
+    margin: 30px 0px;
+}
+.footerLinks ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerLinks ul li a{
+    text-decoration: none;
+    margin: 20px;
+    font-size: 1.3em;
+    transition: 0.5s;
+    color: white;
+}
+.footerLinks ul li a:hover{
+    opacity: 1;
+    color: #F5B82E;
+}
+.footerSpodaj{
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    /*background: linear-gradient(to right, #050a1e 8%, #113350 100%);*/
+    background-color: #050a1e;
+    color: white;
+}
+.footerSpodaj p i{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin: 0px 5px;
+}
+/*-----------MAIN PAGE big image-------------*/
+.bigImage{
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/Chart_NoWatermark.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-bottom: 10px solid rgb(189, 189, 189);
+}
+.bigImage:before{
+    content: "";
+    background-image: 
+    linear-gradient(to bottom, transparent, rgba(5, 5, 5, 0.645) );
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+.headingInImage{
+    align-self: center;
+    margin: auto;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    z-index: 1;
+    text-align: center;
+    text-shadow: 0 0 50px #000;
+}
+.headingInImage h1{
+   font-size: 6rem;
+   font-weight: bold;
+   margin-bottom: 5px;
+   color: #f0f0f0;
+
+}
+.headingInImage p{
+    font-size: 1.5rem;
+}
+
+.headingInImage:nth-child(2){
+    transition-delay: 300ms;
+}
+.headingInImage:nth-child(3){
+    transition-delay: 500ms;
+}
+.headingInImage:nth-child(4){
+    transition-delay: 700ms;
+}
+/*----------POSTS PAGE - ARTICLES------------*/
+.mainContainer{
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    /*background-color: red;*/
+}
+.searchBar{
+    width: 30%;
+    padding: 5px;
+    outline: 0;
+    border: 3px solid white;
+    font-size: 1rem;
+    color: #113350;
+    position: relative;
+    border-radius: 10px;
+}
+.postsContainer{
+    display: flex;
+    margin-top: 25px;
+    gap: 20px;
+    /*background-color: aqua;*/
+    flex-wrap: wrap;
+}
+.postsContainer a{
+    text-decoration: none;
+}
+.post{
+    flex-basis: 450px;
+    flex-grow: 1;
+    background-color: rgb(255, 255, 255);
+    padding: 3px;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    position: relative;
+}
+.post .postImg{
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+.postBody{
+    padding: 15px 20px 20px;
+}
+.postTitle{
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #333;
+}
+.postText{
+    font-size: 1.1rem;
+    color: #333;
+}
+.postInfo{
+    font-size: 0.8rem;
+    color: #333;
+}
+.deleteButton{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    
+}
+.deleteIcon{
+
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+/*-----------FIRST PAGE PAGINATION--------------*/
+.navPosts{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+.navPosts a{
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    background: transparent;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: 0.5s ease-in-out;
+}
+.navPosts a:hover{
+    background-color: #113350;
+}
+.NumPage{
+    color: white;
+}
+/*----------------ABOUT PAGE---------------*/
+.about{
+    width: 100%;
+    padding: 78px 0px;
+    background-color: #113350;
+}
+.aboutContainer{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.about img{
+    height: auto;
+    width: 400px;
+}
+.aboutText{
+    width: 550px;
+}
+.aboutText h1{
+    color: white;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.aboutText h5{
+    color: white;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+.aboutText p{
+    color: rgb(173, 186, 255);
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 45px;
+    letter-spacing: 1px;
+    line-height: 28px;
+}
+/*--------------BUTTON-------------*/
+button{
+    background: #F5B82E; /*#F5B82E            rgb(59, 83, 202)*/
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: 0.4s;
+    text-shadow: 0 0 5px #000;
+
+}
+button:hover{
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid rgb(59, 83, 202);
+}
+
+
+/*---------Create Page--------------*/
+.createBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.innerCreateBox {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    padding: 70px;
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+.innerCreateBox:before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.442);
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transform: translateX(-70px);
+    z-index: -1;
+}
+.innerCreateBox h1{
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
+}
+.createBox form{
+    margin-top: 30px;
+}
+.createBox .pHeading{
+    font-size: 1.3rem;
+    color: white;
+    margin: 20px 0 10px;
+}
+.inputBoxCreate{
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+}
+.inputBoxCreate input{
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 3px solid white;
+    background: transparent;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    border-radius: 10px;
+}
+.inputBoxCreate label{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: white;
+    pointer-events: none;
+    transition: 0.2s;
+}
+.innerCreateBox button{
+    width: 97%;
+    margin: 20px;
+}
+
+.inputBoxCreate input[type=radio]{
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+.radioBoxOut{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.radioBoxOut label, input[type=radio]{
+    color: white;
+    cursor: pointer;
+}
+
+    
+.inputBoxCreate input:focus~label,
+.inputBoxCreate input:valid~label,
+.inputBoxCreate textarea:focus~label,
+.inputBoxCreate textarea:valid~label{
+    top: -40px;
+}
+
+/*----------Image in other pages -----------*/
+.pageImage{
+    width: 100%;
+    height: 60vh;
+    background-image: url(img/Chart_NoWatermark.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-bottom: 10px solid rgb(0, 0, 0);
+}
+.pageImage:before{
+    content: "";
+    background-image: 
+    linear-gradient(to bottom, transparent, rgba(5, 5, 5, 0.645) );
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60vh;
+}
+
+/*-------------------POST Page, singular------------*/
+.PostBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.innerPostBox{
+    max-width: 800px;
+    width: 100%;
+    padding: 70px;
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+    border-radius: 20px;
+    background-color: #15202B;
+    color: white;
+    position: relative;
+}
+.innerPostBox h1{
+    font-size: 2rem;
+}
+.PostText{
+    font-size: 1.2rem;
+    text-align: justify;
+}
+.commentBox{
+    position: relative;
+    color: white;
+    padding: 15px;
+}
+.commentInfo{
+    display: flex;
+    gap: 10px;
+}
+.commentsInput{
+    display: flex;
+}
+.commentsInputBox input{
+    width: 80%;
+    padding: 10px;
+    outline: 0;
+    border: 2px solid white;
+    background: transparent;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    border-radius: 10px;
+
+}
+
+.commentsInputBox button{
+    width: auto;
+    padding: 10px;
+}
+
+/*---------------CKEditor--------------*/
+.ck-editor__editable[role="textbox"] {
+    min-height: 200px;
+}
+
+/*--------------CONTACT-------------- ostalo v Create box*/
+.ContactUs textarea{
+    width: inherit;
+    max-width: 782px;
+    max-height: 300px;
+    min-height: 300px;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+/*------------PROFILE PAGE---------------------*/
+.profile{
+    text-align: center;
+}
+.profileBox{
+    width: 60%;
+    margin: 30px 0 40px 20%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.profileBox p{
+    color: white;
+    font-size: 1.2rem;
+}
+
+/*-----------LOAD animation interception---------------*/
+.hidden{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    transform: translateX(0); 
+}
+
+/*------------MOuse animatios*/
+.trailer{
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border-radius: 20px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    box-shadow: 0 0 1.5rem 0.9rem #F5B82E;
+}
+
+.bigImage:hover > .trailer{
+    opacity: 1;
+}
+.pageImage:hover > .trailer{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 980px){
+    .hideMobile{
+        display: none
+    }
+    .menuButton{
+        display: block;
+    }
+}
+
+@media(max-width: 450px){
+    
+    .PostText{
+        font-size: 0.8rem;
+    }
+    .navPosts a{
+        padding: 5px 10px;
+    }
+    .about img{
+        height: auto;
+        width: 350px;
+    }
+}
+
+@media(max-width: 550px){
+    .radioBoxOut{
+        display: block;
+        justify-content: space-between;
+    }
+    .headingInImage h1{
+        font-size: 4rem;
+        
+     }
+    .navPosts{
+        font-size: 0.8rem;
+    }
+}
