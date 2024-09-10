@@ -22,6 +22,7 @@
             // SPREMENJENA VERZIJA
             <p>
                 Testni odstavek. Z aplikacijo GitHub
+                Changes test
             <p>
     </script>
 </body>
