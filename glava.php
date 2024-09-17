@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Universe</title>
+    <title>LLF Spletna učilnica</title>
     <link rel="stylesheet" href="style.css">
     <?php
         if(!isset($_SESSION["username"])) {
