@@ -742,6 +742,13 @@ button:hover{
     margin-bottom: 20px;
 }
 
+.smeriContainer{
+    display: flex;
+    margin-top: 25px;
+    gap: 20px;
+    /*background-color: aqua;*/
+    flex-wrap: wrap;
+}
 
 
 
