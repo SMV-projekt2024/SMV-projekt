@@ -2,7 +2,6 @@
     include("glava.php");
 ?>
 
-
 <!-- BODY -->
 <div class="bigImage">
     <div class="trailer"></div>
@@ -10,16 +9,13 @@
     <div class="headingInImage hidden" >
         <?php
             if(isset($_SESSION["username"])){
-                echo "<h2>Welcome, " . $_SESSION["username"] . "</h2>";
+                echo "<h2>Dobrodošli, " . $_SESSION["username"] . "</h2>";
             }
         ?>
 
-
-        <h1 class="hidden">Spletna Ucilnica LLF</h1>
-        <p>Spletna ucilnica</p>
+        <h1 class="hidden">Spletna Učilnica LLF</h1>
+        <p>Vaša učilnica na spletu</p>
         <a href="posts_stran.php"><button>Preberi 🡺</button></a>
-
-        
     </div>
 </div>
 
@@ -27,23 +23,14 @@
     <div class="aboutContainer">
         <img src="img\AboutUs.jpg" alt="">
         <div class="aboutText">
-            <h1>About Us</h1>
-            <h5>Blog narejen za nas</h5>
-            <p>Welcome to FINANCE UNIVERSE, where articles come to life through vibrant community engagement. Dive into a diverse range of topics, from technology to personal development, and contribute your own insights by creating and sharing articles. Join dynamic discussions, offer feedback, and connect with fellow readers through comments. Explore, share, and engage with knowledge like never before on our interactive platform.</p>
-            <p>If you encounter any instances of harmful speech or inappropriate content during your time on our platform, we encourage you to reach out to us immediately. Your safety and comfort are paramount, and we are committed to maintaining a respectful and inclusive environment for all users. Additionally, if you wish to upgrade your role or have any other inquiries, our dedicated team is here to assist you. Please don't hesitate to contact us—we're here to ensure your experience on [Platform Name] is positive and fulfilling.</p>
-                <a href="contact_page.php" class="hidden"><button type="button" >Contact us</button></a>
-                
+            <h1>O učilnici</h1>
+            <h5>Platforma za vaše učenje!</h5>
+            <p>Dobrodošli v SPLETNI UČILNICI LLF, kjer lahko s pomočjo interaktivnih vsebin in skupnostnih aktivnosti bogatite svoje znanje. Učite se s širokim naborom predmetov, sodelujte pri diskusijah, oddajajte naloge in pregledujte vsebine, ki vam bodo pomagale pri uspešnem napredku. Spletna učilnica je zasnovana tako, da spodbuja sodelovanje in aktivno učenje z enostavnim dostopom do različnih učnih gradiv.</p>
+            <p>Če med uporabo platforme naletite na kakršno koli neprimerno vsebino ali imate vprašanja glede uporabe, vas prosimo, da nas nemudoma kontaktirate. Naša ekipa je tukaj, da vam pomaga pri vseh težavah in vprašanjih. Varnost in kakovost vaše izkušnje sta za nas najpomembnejši. Kontaktirajte nas, če potrebujete pomoč pri dostopu, nadgradnji vašega računa ali imate druge zahteve.</p>
+            <a href="contact_page.php" class="hidden"><button type="button" >Kontaktirajte nas</button></a>
         </div>
     </div>
 </section>
-
-
-
-
-
-
-
-
 
 <!-- NOGA -->
 <?php 
