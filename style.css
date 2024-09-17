@@ -325,6 +325,16 @@ nav li:first-child {
 .headingInImage:nth-child(4){
     transition-delay: 700ms;
 }
+
+.sola{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+}.sola:hover{
+    color:#F5B82E;
+    text-decoration: underline;
+}
+
 /*----------POSTS PAGE - ARTICLES------------*/
 .mainContainer{
     position: relative;
@@ -397,6 +407,7 @@ nav li:first-child {
     height: 30px;
     cursor: pointer;
 }
+
 /*-----------FIRST PAGE PAGINATION--------------*/
 .navPosts{
     display: flex;
