@@ -469,6 +469,7 @@ nav li:first-child {
 .aboutText p{
     color: rgb(173, 186, 255);
     font-size: 18px;
+    text-transform: capitalize;
     margin-bottom: 45px;
     letter-spacing: 1px;
     line-height: 28px;
@@ -735,7 +736,11 @@ button:hover{
     opacity: 1;
 }
 
-
+/*-----------Smeri-------------*/
+.smeritext{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
 
 
 
