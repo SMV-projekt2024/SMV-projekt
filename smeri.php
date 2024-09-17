@@ -4,11 +4,20 @@
 <!--Body Content-->
 
 <div class="SmerimainContainer">
-<p class="smeriContainer">Elektrotehnik</p>
-<p class="smeriContainer">Kemijski tehnik</p>
-<p class="smeriContainer">Tehnik racunalnistva</p>
-<p class="smeriContainer">Elektikar</p>
+    <div class="smeriContainer">
+        <p>Elektrotehnik</p>
+    </div>
+    <div  class="smeriContainer">
+        <p>Kemijski tehnik</p>
+    </div>
+    <div class="smeriContainer">
+        <p>Tehnik racunalnistva</p>
+    </div>
+    <div class="smeriContainer">
+    <p>Elektikar</p>
+    </div>
 </div>
+
 
 
 <!--Footer-->
