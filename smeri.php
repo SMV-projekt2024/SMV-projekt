@@ -3,11 +3,11 @@
 
 <!--Body Content-->
 
-<div class="mainContainer">
-<p class="smeritext">Elektrotehnik</p>
-<p class="smeritext">Kemijski tehnik</p>
-<p class="smeritext">Tehnik racunalnistva</p>
-<p class="smeritext">Elektikar</p>
+<div class="SmerimainContainer">
+<p class="smeriContainer">Elektrotehnik</p>
+<p class="smeriContainer">Kemijski tehnik</p>
+<p class="smeriContainer">Tehnik racunalnistva</p>
+<p class="smeriContainer">Elektikar</p>
 </div>
 
 
