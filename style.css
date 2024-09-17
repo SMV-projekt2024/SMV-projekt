@@ -445,7 +445,6 @@ nav li:first-child {
 .aboutText h1{
     color: white;
     font-size: 80px;
-    text-transform: capitalize;
     margin-bottom: 20px;
 }
 .aboutText h5{
