@@ -3,7 +3,7 @@
 $server = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
-$dbName = "NRS_KONCNI_PROJEKT";
+$dbName = "smv_spletna_ucilnica";
 
 $conn = mysqli_connect($server, $dbUsername, $dbPassword, $dbName);
 

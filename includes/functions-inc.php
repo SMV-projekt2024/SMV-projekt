@@ -116,17 +116,20 @@ function displayPosts($resultData, $currentUser) {
     if (mysqli_num_rows($resultData) > 0) {
         while ($row = mysqli_fetch_assoc($resultData)) {
             echo '<div class="post">';
-            echo '<a href="post.php?id=' . $row["PostsId"] . '">';
-            echo '<img class="postImg" src="' . $row["PostsImgUrl"] . '">';
+            // echo '<a href="post.php?id=' . $row["PostsId"] . '">';
+            //echo '<img class="postImg" src="' . $row["PostsImgUrl"] . '">';
             echo '<div class="postBody">';
-            echo '<h2 class="postTitle">' . $row["PostsTitle"] . '</h2>';
-            echo '<p class="postText">' . $row["PostsDescription"] . '</p> <br>';
-            echo '<p class="postInfo">Created by <i>' . $row["UsersUsername"] . '</i></p>';
-            echo '<p class="postInfo">Published on <i>' . $row["PostsDate"] . '</i></p>';
+            echo '<h2 class="postTitle">' . $row["kratica"] . '</h2>';
+            echo '<p class="postText">' . $row["celo_ime"] . '</p> <br>';
+            //echo '<p class="postText">' . $row["PostsDescription"] . '</p> <br>';
+            //echo '<p class="postInfo">Created by <i>' . $row["UsersUsername"] . '</i></p>';
+            //echo '<p class="postInfo">Published on <i>' . $row["PostsDate"] . '</i></p>';
 
+            /*
             if ($currentUser == $row['UsersUsername'] || roleCheck() == "admin") {
                 echo "<a class='deleteButton' href='includes\delete_data-inc.php?id=" .$row["PostsId"] . "&type=post' ><img class='deleteIcon' src='img\delete-removebg-Outside.png' onmouseover='change(this)' onmouseout='changeback(this)'></a>";
             }
+                */
             
             echo '</a>';
             echo '</div>';
