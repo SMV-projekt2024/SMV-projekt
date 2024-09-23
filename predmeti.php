@@ -5,6 +5,9 @@
 <!-- BODY -->
 
 <div class="mainContainer">
+    <div class="smeriContainer">
+        <p>Neki</p>
+    </div>
     <p>Neki</p>
 
 </div>
