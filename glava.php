@@ -41,7 +41,7 @@
             
         </ul>
         <ul>
-            <li><a href="prva_stran.php"><img class="logo" src="img\LogoFinance.png" alt="Logo"></a></li>
+            <li><a href="prva_stran.php"><img class="logo" src="logo.png" alt="Logo"></a></li>
             <li class="hideMobile"><a href="prva_stran.php">Home</a></li>
             <li class="hideMobile"><a href="posts_stran.php">Articles</a></li>
             <?php
