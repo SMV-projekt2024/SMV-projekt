@@ -8,7 +8,7 @@
 
 <div class="createBox">
     <div class="innerCreateBox comments">
-        <h1>Comments</h1>
+        <h1>Komentarji</h1>
         <?php 
            if(isset($_SESSION["userId"])){
             echo '<div class="commentsInputBox">';
