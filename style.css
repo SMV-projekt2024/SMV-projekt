@@ -4,7 +4,7 @@
 }
 body{
     min-height: 100vh;
-    background-image: url(img/DarkBackground.jpg);
+    background-image: url(img/background.jpg);
    /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);*/
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,7 +15,8 @@ body{
 /* -------------------HEADER------------------ */
 .logo{
     display: block;
-    width: 230px;
+    width: 45px;
+    height: 45px;
 }
 nav{
     background: linear-gradient(to right, #040319 8%, #0e233d 100%);
