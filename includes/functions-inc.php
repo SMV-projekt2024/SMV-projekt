@@ -116,7 +116,7 @@ function displayPosts($resultData, $currentUser) {
     if (mysqli_num_rows($resultData) > 0) {
         while ($row = mysqli_fetch_assoc($resultData)) {
             echo '<div class="post">';
-            // echo '<a href="post.php?id=' . $row["PostsId"] . '">';
+            echo '<a href="post.php?id=' . $row["id_predmet"] . '">';
             //echo '<img class="postImg" src="' . $row["PostsImgUrl"] . '">';
             echo '<div class="postBody">';
             echo '<h2 class="postTitle">' . $row["kratica"] . '</h2>';

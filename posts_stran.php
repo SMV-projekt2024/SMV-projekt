@@ -15,7 +15,7 @@
         <?php 
             include("includes\get_posts-onc.php");
         ?>
-    </div>1px !important;
+    </div>
     <div class="navPosts">
         
         <div class="postsNumbers">
@@ -23,7 +23,7 @@
             <?php
                 if(isset($_GET["pageNr"]) && $_GET["pageNr"] > 1){
             ?>
-                <a href="?pageNr=<?php echo $_GET["pageNr"] - 1?>"Prejšna</a>
+                <a href="?pageNr=<?php echo $_GET["pageNr"] - 1?>">Prejšna</a>
             <?php
                 }else{
             ?>

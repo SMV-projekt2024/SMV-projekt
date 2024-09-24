@@ -48,7 +48,7 @@
         mysqli_stmt_close($statement); 
     } */
     //else{
-        $sql = "SELECT kratica, celo_ime FROM Predmeti";
+        $sql = "SELECT * FROM Predmeti";
         
         $statement = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($statement, $sql)){

@@ -5,7 +5,10 @@
     include("includes\display_post-onc.php");
     
 ?>
-
+<?php 
+    include("noga.php");
+?>
+<!--
 <div class="createBox">
     <div class="innerCreateBox comments">
         <h1>Komentarji</h1>
@@ -25,9 +28,9 @@
            include("includes\display_comments-inc.php");
         ?>
     </div>   
-</div>
+</div>-->
 
 
 
 <!----NOGA---->
-<?php include("noga.php"); ?>
+

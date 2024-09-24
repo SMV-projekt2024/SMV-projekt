@@ -1,13 +1,13 @@
 <?php
 
 if (isset($_GET["id"])){
-    $postId = $_GET["id"];
+    $id_predmeta = $_GET["id"];
 
     require_once "database-inc.php";
     require_once "functions-inc.php";
 
-    $sql = "SELECT Users.UsersUsername, Posts.* FROM Users INNER JOIN Posts ON users.UsersId = posts.PostsAuthorId
-    WHERE PostsId = $postId";
+    $sql = "SELECT * FROM Predmeti
+    WHERE id_predmet = $id_predmeta";
     $statement = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($statement, $sql)){
         header("location: ../prva_stran.php?error=StatementFailed");
@@ -20,17 +20,17 @@ if (isset($_GET["id"])){
     if (mysqli_num_rows($resultData) > 0) {
         $row = mysqli_fetch_assoc($resultData);
 
-        echo '<div class="pageImage" style="background-image: url(' . $row["PostsImgUrl"] . ');">';
+        echo '<div class="pageImage" style="background-image: url(' . $row["slika"] . ');">';
         echo '<div class="trailer"></div>';
         echo '    <div class="headingInImage">';
-        echo "      <h1>" . $row["PostsTitle"] . "</h1>";
-        echo "      <p>Written by <b>" . $row["UsersUsername"] . "</b></p>";
-        echo "      <p>Published on: " . $row["PostsDate"] . "</p> <br>";
+        echo "      <h1>" . $row["kratica"] . "</h1>";
+        echo "      <p><b>" . $row["celo_ime"] . "</b></p>";
+        //echo "      <p>Published on: " . $row["PostsDate"] . "</p> <br>";
         echo '</div>';
         echo '</div>';
         echo '<div class="PostBox">';
         echo '    <div class="innerPostBox">';
-        echo        $row["PostsBody"];
+        echo        $row["celo_ime"];
         echo '    </div>';
         echo '</div>';
 
