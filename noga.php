@@ -6,7 +6,7 @@
         </div>-->
         <div class="footerLinks">
             <ul>
-                <li><a href="prva_stran.php">Glavna stran</a></li>
+                <li><a href="prva_stran.php">Domov</a></li>
                 <li><a href="posts_stran.php">Šole</a></li>
                 <li><a href="contact_page.php">Kontakt</a></li>
             </ul>
