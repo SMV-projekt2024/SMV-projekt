@@ -16,7 +16,7 @@
         <h1 class="hidden">Spletna Učilnica LLF</h1>
         <p>Vaša učilnica na spletu</p>
         <a href="posts_stran.php"><button>Preberi 🡺</button></a> <br>
-        <a class="sola" href="smeri.php">Srednja šola za kemijo, elektrotehniko in računalništvo</a>
+        <a class="sola" href="sole.php">Srednja šola za kemijo, elektrotehniko in računalništvo</a>
     </div>
 </div>
 
