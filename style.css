@@ -726,24 +726,22 @@ button:hover{
     opacity: 1;
 }
 
-/*-----------Smeri-------------*/
-
-
-.SmerimainContainer{
-    position: relative;
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 20px;
-    /*background-color: red;*/
+/*----------- SOLE -------------*/
+.solaTitle {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #ffffff;
 }
 
-.smeriContainer{
-    display: flex;
-    margin-top: 25px;
-    gap: 20px;
-    /*background-color: aqua;*/
-    flex-wrap: wrap;
+.solaText {
+    font-size: 1.2rem;
+    text-align: justify;
+    color: white;
 }
+
+
+
+
 
 
 
