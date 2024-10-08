@@ -200,7 +200,7 @@ function prikazNaloge($resultData) {
             echo '</a>';
             echo '</div>';
             echo '</div>';
-            echo '<div>_</div>';
+            echo '<div style="color:black">.</div>';
 
         }
 
@@ -218,7 +218,7 @@ function prikazSmeri($resultData){
         while ($row = mysqli_fetch_assoc($resultData)) {
             
             echo '<div class="post">';
-            echo '<a href="post.php?id=' . $row["id_smer"] . '">';
+            echo '<a href="posts_stran.php?id=' . $row["id_smer"] . '">';
             echo '<div class="postBody">';
             echo '<h2 class="postTitle">' . $row["naziv_smer"] . '</h2>';
             
