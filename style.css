@@ -728,15 +728,17 @@ button:hover{
 
 /*----------- SOLE -------------*/
 .solaTitle {
-    font-size: 1.7rem;
+    font-size: 2.2rem;
     font-weight: 500;
     color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9); 
 }
 
 .solaText {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: justify;
     color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9); 
 }
 
 
