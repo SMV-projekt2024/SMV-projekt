@@ -748,7 +748,10 @@ button:hover{
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9); 
 }
 
-
+/*_____________POST_______________*/
+.post a{
+    text-decoration: none;
+}
 
 
 
