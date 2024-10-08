@@ -210,6 +210,33 @@ function prikazNaloge($resultData) {
     }
 }
 
+
+
+/*-------------- DISPLAY SMERI ------------------*/
+function prikazSmeri($resultData){
+    if (mysqli_num_rows($resultData) > 0) {
+        while ($row = mysqli_fetch_assoc($resultData)) {
+            
+            echo '<div class="post">';
+            echo '<a href="post.php?id=' . $row["id_smer"] . '">';
+            echo '<div class="postBody">';
+            echo '<h2 class="postTitle">' . $row["naziv_smer"] . '</h2>';
+            
+            
+            echo '</a>';
+            echo '</div>';
+            echo '</div>';
+
+        }
+
+    }
+    else {
+            echo "<p style='color:white'>No posts Found</p>";
+    }
+}
+
+
+
 /*--------------ROLE CHECK ------------------*/
 
 function roleCheck(){
