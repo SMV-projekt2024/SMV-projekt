@@ -21,7 +21,7 @@
 
 <section class="about">
     <div class="aboutContainer">
-        <img src="img\AboutUs.jpg" alt="">
+        <img src="img\slikaSola.jpg" alt="">
         <div class="aboutText">
             <h1>O učilnici</h1>
             <h5>Platforma za vaše učenje!</h5>
