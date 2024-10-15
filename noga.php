@@ -7,7 +7,7 @@
         <div class="footerLinks">
             <ul>
                 <li><a href="prva_stran.php">Domov</a></li>
-                <li><a href="posts_stran.php">Šole</a></li>
+                <li><a href="sole.php">Šole</a></li>
                 <li><a href="contact_page.php">Kontakt</a></li>
             </ul>
         </div>
