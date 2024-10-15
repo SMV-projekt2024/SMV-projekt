@@ -12,52 +12,58 @@
 <div class="pageImage" style="background-image: url(img/Create_image.jpg);">
     <div class="trailer"></div>
     <div class="headingInImage hidden">
-        <h1>Ustvari novo nalogo</h1>
+        <h1>Create your own</h1>
+        <p>Explore The Crypto World</p>
         
     </div>
 </div>
 <div class="createBox">
     <div class="innerCreateBox">
-        <h1>Ustvari novo nalogo</h1>
+        <h1>Create your post</h1>
         <form action="includes/create_post-inc.php" method="post">
             <div class="inputBoxCreate">
                 <input type="text" required name="title" id="">
-                <label>Naslov</label>
+                <label>Title</label>
             </div>
             <div class="inputBoxCreate">
                 <input type="text" required name="description" id="">
-                <label>Kratek opis(končaj z ...)</label>
+                <label>Short Description (end with ...)</label>
             </div>
             <div class="inputBoxCreate">
                 <input type="text" required name="imgUrl" id="">
-                <label>URL slike</label>
+                <label>Image URL</label>
             </div>
 
-            <p class="pHeading">Naloga</p>
+            <p class="pHeading">Branch</p>
             <div class="radioBoxOut">
                 <div class="radioBoxInner">
                     <input type="radio" required name="branch" id="rad1" value="crypto">
-                    <label for="rad1">Domača naloga</label>
+                    <label for="rad1">Crypto</label>
                 </div>
                 <div class="radioBoxInner">
                     <input type="radio" required name="branch" id="rad2" value="forex">
-                    <label for="rad2">Snov</label>
+                    <label for="rad2">Forex</label>
                 </div>
                 <div class="radioBoxInner">
                     <input type="radio" required name="branch" id="rad3" value="commodities">
-                    <label for="rad3">Vaja</label>
+                    <label for="rad3">Commodities</label>
                 </div> 
                 <div class="radioBoxInner">
                     <input type="radio" required name="branch" id="rad4" value="RealEstate">
-                    <label for="rad4">Informativno</label>
+                    <label for="rad4">Real Estate</label>
                 </div> 
+                <div class="radioBoxInner">
+                    <input type="radio" required name="branch" id="rad5" value="general">
+                    <label for="rad5">General</label>
+                </div>  
+            </div> 
             
-            <p class="pHeading">vsebina</p>
+            <p class="pHeading">Body</p>
             <div class="inputBoxCreate">
                 <textarea id="editor" name="body"></textarea>                       
             </div>
             <div class="inputBoxCreate">
-                <button type="submit" name="submit">Ustvari</button>          
+                <button type="submit" name="submit">Create</button>          
             </div>
             
         </form>
