@@ -22,7 +22,7 @@
         <ul class="sidebar" id="sidebar">
             <li onclick=hidSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
             <li><a href="prva_stran.php">Domov</a></li>
-            <li><a href="posts_stran.php">Šola</a></li>
+            <li><a href="sole.php">Šola</a></li>
             <?php
                 require_once("includes/functions-inc.php");
                 if ( isset($_SESSION["userId"]) ){
