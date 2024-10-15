@@ -43,7 +43,7 @@
         <ul>
             <li><a href="prva_stran.php"><img class="logo" src="img/logo.png" alt="Logo"></a></li>
             <li class="hideMobile"><a href="prva_stran.php">Domov</a></li>
-            <li class="hideMobile"><a href="posts_stran.php">Šole</a></li>
+            <li class="hideMobile"><a href="sole.php">Šole</a></li>
             <?php
                 if ( isset($_SESSION["userId"]) ){
                     if  ( roleCheck() == "admin" || roleCheck() == "creator"){
