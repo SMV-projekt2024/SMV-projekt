@@ -183,7 +183,7 @@ function prikazNaloge($resultData) {
         while ($row = mysqli_fetch_assoc($resultData)) {
             
             echo '<div class="post">';
-            echo '<a href="post.php?id=' . $row["id_naloga"] . '">';
+            echo '<a href="naloga.php?id=' . $row["id_naloga"] . '">';
             //echo '<img class="postImg" src="' . $row["PostsImgUrl"] . '">';
             echo '<div class="postBody">';
             echo '<h2 class="postTitle">' . $row["naslov"] . '</h2>';
@@ -235,6 +235,9 @@ function prikazSmeri($resultData){
     }
 }
 
+
+
+/*--------------------------PRIKAZ NALOGE STRAN----------------------*/
 
 
 /*--------------ROLE CHECK ------------------*/
