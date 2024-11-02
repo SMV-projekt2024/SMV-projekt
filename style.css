@@ -803,7 +803,6 @@ table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-/* Add some styling to the first column if it's an ID column */
 table td:first-child {
     font-weight: bold;
     color: #F5B82E;
@@ -815,7 +814,6 @@ table td:last-child {
     display: flex;
 }
 
-/* Center-aligning text in the header */
 table th, table td {
     text-align: center;
 }
@@ -840,7 +838,7 @@ table button:hover {
     background-color: #2456e0;
 }
 
-/* Hover effect for table rows */
+
 table tr:hover {
     background-color: #f1f1f1;
 }
