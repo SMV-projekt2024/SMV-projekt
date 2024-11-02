@@ -1,3 +1,4 @@
+</div>
 <footer>
     <div class="footerContainer">
         <!--<div class="socials">
@@ -16,6 +17,7 @@
         <p>Avtorske pravice &copy; 2024; Oblikoval <i>Luka Jurhar, Florjan Slatinek</i></p>
     </div>
 </footer>
+</div>
 <script src="script.js"></script>
 </body>
 </html>

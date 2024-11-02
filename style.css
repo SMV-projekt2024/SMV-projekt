@@ -12,6 +12,18 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    padding-bottom: 50px;
+}
+
 /* -------------------HEADER------------------ */
 .logo{
     display: block;
@@ -222,6 +234,7 @@ nav li:first-child {
     padding: 70px 0 20px ;
     /*background: linear-gradient(to right, #050a1e 8%, #113350 100%);*/
     background: linear-gradient(to bottom,  #113350 0%, #050a1e 50%);
+
 }
 .socials{
     display: flex;
