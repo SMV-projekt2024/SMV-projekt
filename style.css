@@ -767,6 +767,103 @@ button:hover{
 }
 
 
+/*-------------------------TABELA------------------------------*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styling */
+table th {
+    background-color: #F5B82E;
+    color: white;
+    padding: 12px;
+    text-transform: uppercase;
+}
+
+/* Row styling */
+table td {
+    padding: 12px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hover effect on rows */
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Alternating row colors */
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Add some styling to the first column if it's an ID column */
+table td:first-child {
+    font-weight: bold;
+    color: #F5B82E;
+}
+
+table td:last-child {
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+}
+
+/* Center-aligning text in the header */
+table th, table td {
+    text-align: center;
+}
+
+.tabelaButton {
+    width: 10%;
+    height: 30%;
+    padding: 3px;
+    margin: 50px;
+    background-color: #F5B82E;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    border: 2px #113350 solid ;
+}
+
+table button:hover {
+    background-color: #2456e0;
+}
+
+/* Hover effect for table rows */
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
