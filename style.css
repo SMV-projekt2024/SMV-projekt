@@ -778,7 +778,6 @@ table {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Header styling */
 table th {
     background-color: #F5B82E;
     color: white;
@@ -786,19 +785,16 @@ table th {
     text-transform: uppercase;
 }
 
-/* Row styling */
 table td {
     padding: 12px;
     color: #333;
     border-bottom: 1px solid #ddd;
 }
 
-/* Hover effect on rows */
 table tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Alternating row colors */
 table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
