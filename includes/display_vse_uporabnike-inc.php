@@ -34,7 +34,7 @@
 
             # SPREMENI
             echo "<form action='uporabnik_stran.php?id_user=" . $row['UsersId'] . "' method='post' >";
-            echo "<button class='tabelaButton' type='submit'>Edit</button>";
+            echo "<button class='tabelaButton' type='submit'>Uredi</button>";
             echo "</form>";
 
             # IZBRIŠI
