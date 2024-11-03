@@ -804,7 +804,7 @@ table td:first-child {
     color: #F5B82E;
 }
 
-table td:last-child {
+.tabelaVsi td:last-child {
     text-align: center;
     vertical-align: middle;
     display: flex;
@@ -815,6 +815,7 @@ table th, table td {
 }
 
 .tabelaButton {
+    width: 1rem;
     height: 2.5rem;
     background-color: #F5B82E;
     color: white;

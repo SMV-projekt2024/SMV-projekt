@@ -22,48 +22,45 @@ if(isset($_POST['submit'])) {
     
     $allowed = array("jpg", "jpeg", "png", "pdf", "doc");
 
-    if (in_array($fileActualExt, $allowed)){
-        if ($fileError == 0) {
-            if ($fileSize < 500000) {
-                $fileNameNew = uniqid("", true) . "." . $fileActualExt;
-                $fileDestination = "../uploads/" . $fileNameNew;
+    
+    if ($fileError == 0) {
+        if ($fileSize < 500000) {
+            $fileNameNew = uniqid("", true) . "." . $fileActualExt;
+            $fileDestination = "../uploads/" . $fileNameNew;
 
-                if (move_uploaded_file($fileTmpName, $fileDestination)) {
-                    $sql = "INSERT INTO Oddanenaloge(id_ucenec, id_naloga, datoteka)
-                    VALUES(?, ?, ?)";
+            if (move_uploaded_file($fileTmpName, $fileDestination)) {
+                $sql = "INSERT INTO Oddanenaloge(id_ucenec, id_naloga, datoteka)
+                VALUES(?, ?, ?)";
 
-                $statement = mysqli_stmt_init($conn);
-                if (!mysqli_stmt_prepare($statement, $sql)){
-                    header("location: ../prva_stran.php?error=StatementFailed");
-                    exit();
-                }
-                mysqli_stmt_bind_param($statement, "iis", $currentUserId, $id_naloga, $fileNameNew);
-                mysqli_stmt_execute($statement);
-
-
-
-                    
-                } else {
-                    echo "Failed to move uploaded file.";
-                }
-
-                header("Location: naloga.php?uploadsuccess");
-
-
+            $statement = mysqli_stmt_init($conn);
+            if (!mysqli_stmt_prepare($statement, $sql)){
+                header("location: ../prva_stran.php?error=StatementFailed");
+                exit();
             }
-            else{
-                echo "Your file is too big";
+            mysqli_stmt_bind_param($statement, "iis", $currentUserId, $id_naloga, $fileNameNew);
+            mysqli_stmt_execute($statement);
+
+
+
+                
+            } else {
+                echo "Failed to move uploaded file.";
             }
+
+            header("Location: ../naloga.php?id=". $id_naloga . "&status=UploadSuccess");
+
 
         }
         else{
-            echo "There was an error uploading a file";
-            echo $fileError = $_FILES['file']["error"];
+            echo "Your file is too big";
         }
+
     }
-    else {
-        echo "You cannot upload files of this type!";
+    else{
+        echo "There was an error uploading a file";
+        echo $fileError = $_FILES['file']["error"];
     }
+
 
 
 }

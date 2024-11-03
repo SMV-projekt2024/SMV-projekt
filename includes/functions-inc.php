@@ -192,6 +192,8 @@ function prikazNaloge($resultData, $currentUserId, $id_predmeta) {
             
 
             if ($currentUserId == $row['id_predmet'] || roleCheck() == "admin") {
+                echo "<a  href='./pregled_nalog_stran.php?id_naloga=" .$row["id_naloga"]."&id_predmeta=". $id_predmeta . "&type=post' >Preglej</a>";
+
                 echo "<a class='deleteButton' href='includes\delete_naloga-inc.php?id_naloga=" .$row["id_naloga"]."&id_predmeta=". $id_predmeta . "&type=post' ><img class='deleteIcon' src='img\delete-removebg-Outside.png' onmouseover='change(this)' onmouseout='changeback(this)'></a>";
             }
 

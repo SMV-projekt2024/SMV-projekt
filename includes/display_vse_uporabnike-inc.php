@@ -18,7 +18,7 @@
     
     
     if (mysqli_num_rows($resultData) > 0) {
-        echo "<table border='1'>";
+        echo "<table class='tabelaVsi'border='1'>";
         echo "<tr><th>ID</th><th>Username</th><th>Email</th><th>Role</th></tr>"; 
     
         

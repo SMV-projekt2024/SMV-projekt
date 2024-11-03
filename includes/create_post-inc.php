@@ -32,56 +32,53 @@ if ( isset( $_POST["submit"] ) ) {
     $fileExt = explode(".", $fileName);
     $fileActualExt = strtolower(end($fileExt));
     
-    $allowed = array("jpg", "jpeg", "png", "pdf", "doc");
 
-    if (in_array($fileActualExt, $allowed)){
-        if ($fileError == 0) {
-            if ($fileSize < 500000) {
-                $fileNameNew = uniqid("", true) . "." . $fileActualExt;
-                $fileDestination = "../uploads/" . $fileNameNew;
+    
+    if ($fileError == 0) {
+        if ($fileSize < 500000) {
+            $fileNameNew = uniqid("", true) . "." . $fileActualExt;
+            $fileDestination = "../uploads/" . $fileNameNew;
 
-                if (move_uploaded_file($fileTmpName, $fileDestination)) {
-                    $sql = "INSERT INTO Naloge (id_avtor, naslov, opis, navodilo, rok, datoteka, id_predmet, slika) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+            if (move_uploaded_file($fileTmpName, $fileDestination)) {
+                $sql = "INSERT INTO Naloge (id_avtor, naslov, opis, navodilo, rok, datoteka, id_predmet, slika) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 
-                $statement = mysqli_stmt_init($conn);
-                if (!mysqli_stmt_prepare($statement, $sql)){
-                    header("location: ../prva_stran.php?error=StatementFailed");
-                    exit();
-                }
-
-                mysqli_stmt_bind_param($statement, "isssisis", $currentUserId, $naslov,  $opis, 
-                                                                                        $navodilo, $current_date, $fileNameNew, 
-                                                                                        $id_predmet, $img);
-                mysqli_stmt_execute($statement);
-                mysqli_stmt_close($statement);
-
-                header("location: ../post.php?error=YouCreatedThePost&id=" . $id_predmet);
+            $statement = mysqli_stmt_init($conn);
+            if (!mysqli_stmt_prepare($statement, $sql)){
+                header("location: ../prva_stran.php?error=StatementFailed");
                 exit();
-
-
-
-                    
-            } else {
-                    echo "Failed to move uploaded file.";
-                }
-
-                header("Location: post.php?id=" . $id_predmet ."&status=uploadsuccess");
-
-
             }
-            else{
-                echo "Your file is too big";
+
+            mysqli_stmt_bind_param($statement, "isssisis", $currentUserId, $naslov,  $opis, 
+                                                                                    $navodilo, $current_date, $fileNameNew, 
+                                                                                    $id_predmet, $img);
+            mysqli_stmt_execute($statement);
+            mysqli_stmt_close($statement);
+
+            header("location: ../post.php?error=YouCreatedThePost&id=" . $id_predmet);
+            exit();
+
+
+
+                
+        } else {
+                echo "Failed to move uploaded file.";
             }
+
+            header("Location: post.php?id=" . $id_predmet ."&status=uploadsuccess");
+
 
         }
         else{
-            echo "There was an error uploading a file";
-            echo $fileError = $_FILES['file']["error"];
+            echo "Your file is too big";
         }
+
     }
-    else {
-        echo "You cannot upload files of this type!";
+    else{
+        echo "There was an error uploading a file";
+        echo $fileError = $_FILES['file']["error"];
     }
+    
+    
 
 
 
