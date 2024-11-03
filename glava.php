@@ -28,7 +28,7 @@
             <?php
                 require_once("includes/functions-inc.php");
                 if ( isset($_SESSION["userId"]) ){
-                    if  ( roleCheck() == "admin" || roleCheck() == "creator"){
+                    if  ( roleCheck() == "admin"){
                         echo"<li><a href='create_post.php'>Create Post</a></li>";
                         echo"<li><a href='vsi_uporabniki.php'>Vsi uporabniki</a></li>";
                     }

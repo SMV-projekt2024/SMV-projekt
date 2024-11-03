@@ -44,6 +44,12 @@ if (isset($_GET["id"])){
         $resultDataN = mysqli_stmt_get_result($statement);
 
         prikazNaloge($resultDataN);
+
+
+
+        if  ( roleCheck() == "admin" || roleCheck() == "creator"){
+            echo "<a href='create_post.php?id_predmet=". $id_predmeta ."'><button>Ustvari nalogo</button></a>";
+        }
         
 
 

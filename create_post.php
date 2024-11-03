@@ -36,7 +36,7 @@
             
             <p class="pHeading">Vsebina</p>
             <div class="inputBoxCreate">
-                <textarea id="editor" name="body"></textarea>    
+                <textarea id="editor" name="navodila"></textarea>    
             </div>
 
             <div class="inputBoxCreate">
