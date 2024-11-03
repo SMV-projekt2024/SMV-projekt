@@ -9,7 +9,7 @@
     <form action="" method="get">
         <input class="searchBar" type="text" name="search" id="" placeholder="Search posts">
         <button type="submit" name="searchSubmit" >Išči</button>
-        <button type="submit" name="Reset">Ponastavi</button>
+
     </form>
     <div class="postsContainer">
         <?php 

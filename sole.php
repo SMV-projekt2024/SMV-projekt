@@ -27,8 +27,8 @@
             </div>
 
             <div class="postBody, hidden">
-                <a href="post.php?id=1">
-                    <h2 class="solaTitle">Srednja šola za logistiko in stritvene dejavnosi</h2>
+                <a href="post.php?id=4">
+                    <h2 class="solaTitle">Srednja šola za logistiko in storitvene dejavnosti</h2>
                     <p class="solaText">Kidrič</p> <br>
                 </a>
             </div>
