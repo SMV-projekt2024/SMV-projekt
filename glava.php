@@ -29,12 +29,10 @@
                 require_once("includes/functions-inc.php");
                 if ( isset($_SESSION["userId"]) ){
                     if  ( roleCheck() == "admin"){
-                        echo"<li><a href='create_post.php'>Create Post</a></li>";
                         echo"<li><a href='vsi_uporabniki.php'>Vsi uporabniki</a></li>";
+                        echo"<li><a href='poucevanja_stran.php'>Učitelji</a></li>";
                     }
-                    else if (roleCheck() == "creator"){ 
-                        echo"<li><a href='create_post.php'>Create Post</a></li>";
-                    }
+                    
                     echo "<li onclick=showSignIn()><a href='profile_stran.php'><button>Profile</button></a></li>";
                     echo "<li><a href='includes/signout-inc.php'><button>Logout</button></a></li>";
                     
@@ -53,12 +51,10 @@
             <?php
                 if ( isset($_SESSION["userId"]) ){
                     if  ( roleCheck() == "admin"){
-                        echo"<li class='hideMobile'><a href='create_post.php'>Create Post</a></li>";
                         echo"<li class='hideMobile'><a href='vsi_uporabniki.php'>Vsi uporabniki</a></li>";
+                        echo"<li class='hideMobile'><a href='poucevanja_stran.php'>Učitelji</a></li>";
                     }
-                    else if (roleCheck() == "creator"){ 
-                        echo"<li class='hideMobile'><a href='create_post.php'>Create Post</a></li>";
-                    }
+                    
                     echo "<li class='hideMobile'><a href='profile_stran.php'><button>Profile</button></a></li>";
                     echo "<li class='hideMobile'><a href='includes/signout-inc.php'><button>Logout</button></a></li>";
                 }

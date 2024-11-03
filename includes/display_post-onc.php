@@ -54,7 +54,27 @@ if (isset($_GET["id"])){
 
 
 
-        if  ( roleCheck() == "admin" || roleCheck() == "creator"){
+
+
+        $sql = "SELECT *
+                FROM Poucevanja
+                WHERE id_predmet = $id_predmeta
+                AND id_user = $currentUserId";
+        $statement = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($statement, $sql)){
+             header("location: ../prva_stran.php?error=StatementFailed");
+             exit();
+        }
+        mysqli_stmt_execute($statement);
+
+        $resultDataN = mysqli_stmt_get_result($statement);
+        
+
+
+
+
+
+        if ($row = mysqli_fetch_assoc($resultDataN) > 0 || roleCheck() == "admin") {
             echo "<a href='create_post.php?id_predmet=". $id_predmeta ."'><button>Ustvari nalogo</button></a>";
         }
         

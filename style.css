@@ -815,7 +815,6 @@ table th, table td {
 }
 
 .tabelaButton {
-    width:rem;
     height: 2.5rem;
     background-color: #F5B82E;
     color: white;
@@ -838,6 +837,13 @@ table tr:hover {
 }
 
 
+.dovoljenjaTabela td:last-child {
+    display: block !important;
+}
+
+.dovoljenjaTabela button{
+    width: 90px;
+}
 
 
 

@@ -198,7 +198,7 @@ function prikazNaloge($resultData, $currentUserId, $id_predmeta) {
             echo '</a>';
             echo '</div>';
             echo '</div>';
-            echo '<div style="color:black">.</div>';
+            echo '<div style="color:#15202B">.</div>';
 
         }
 
