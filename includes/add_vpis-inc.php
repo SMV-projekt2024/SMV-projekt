@@ -47,7 +47,7 @@ if ( isset( $_POST["submit"] ) ) {
 
 
 
-            header("location: ../naloga.php?id=" . $id_predmet);
+            header("location: ../post.php?id=" . $id_predmet);
         } else {
             echo "The keys do not match.";
         }

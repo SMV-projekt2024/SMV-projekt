@@ -77,7 +77,7 @@
     
         while ($row = mysqli_fetch_assoc($resultDataVpisi)) {
             echo "<tr>";
-            echo "<form action='uporabnik_stran.php?id_user=". $row['id_vpis'] ."' method='post'>";
+            echo "<form action='includes/delete_vpis-inc.php?id_vpis=". $row['id_vpis'] . "&id_user=". $UserId ."' method='post' onsubmit=\"return confirm('Ste prepričani, da želite izbrisati ta vpis.');\">";
             echo "<td>" . $row['kratica'] . "</td>"; 
             echo "<td>" . $row['celo_ime'] . "</td>"; 
 

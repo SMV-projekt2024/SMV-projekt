@@ -815,10 +815,8 @@ table th, table td {
 }
 
 .tabelaButton {
-    width: 10%;
-    height: 30%;
-    padding: 3px;
-    margin: 50px;
+    width:rem;
+    height: 2.5rem;
     background-color: #F5B82E;
     color: white;
     border: none;

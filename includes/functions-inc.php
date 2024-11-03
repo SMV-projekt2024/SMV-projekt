@@ -246,7 +246,7 @@ function roleCheck(){
     $server = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
-    $dbName = "NRS_KONCNI_PROJEKT";
+    $dbName = "SMV_SPLETNA_UCILNICA";
 
     $conn = mysqli_connect($server, $dbUsername, $dbPassword, $dbName);
 

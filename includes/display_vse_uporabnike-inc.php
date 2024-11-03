@@ -24,15 +24,25 @@
         
         while ($row = mysqli_fetch_assoc($resultData)) {
             echo "<tr>";
-            echo "<form action='uporabnik_stran.php?id_user=". $row['UsersId'] ."' method='post'>";
+           
             echo "<td>" . htmlspecialchars($row['UsersId']) . "</td>"; 
             echo "<td>" . htmlspecialchars($row['UsersUsername']) . "</td>"; 
             echo "<td>" . htmlspecialchars($row['UsersEmail']) . "</td>"; 
             echo "<td>" . htmlspecialchars($row['UsersRole']) . "</td>"; 
 
-            echo "<td><button class='tabelaButton' type='submit'>Edit</button></td>";
-            echo "</form>"; 
+            echo "<td>";
 
+            # SPREMENI
+            echo "<form action='uporabnik_stran.php?id_user=" . $row['UsersId'] . "' method='post' >";
+            echo "<button class='tabelaButton' type='submit'>Edit</button>";
+            echo "</form>";
+
+            # IZBRIŠI
+            echo "<form action='includes/delete_user-inc.php?id_user=" . $row['UsersId'] . "' method='post'  onsubmit=\"return confirm('Ste prepričani, da želite izbrisati tega uporabnika.');\">";
+            echo "<button class='tabelaButton' type='submit'>Izbriši</button>";
+            echo "</form>";
+
+            echo "</td>";
             echo "</tr>";
         }
     
