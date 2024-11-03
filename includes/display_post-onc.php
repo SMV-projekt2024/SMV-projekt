@@ -1,7 +1,13 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); 
+}
+
 if (isset($_GET["id"])){
     $id_predmeta = $_GET["id"];
+
+    $currentUserId = $_SESSION["userId"];
 
     require_once "database-inc.php";
     require_once "functions-inc.php";
@@ -32,7 +38,8 @@ if (isset($_GET["id"])){
         echo '    <div class="innerPostBox">';
 
 
-        $sql = "SELECT * FROM Naloge
+        $sql = "SELECT *
+                FROM Naloge
                 WHERE id_predmet = $id_predmeta";
         $statement = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($statement, $sql)){
@@ -43,7 +50,7 @@ if (isset($_GET["id"])){
 
         $resultDataN = mysqli_stmt_get_result($statement);
 
-        prikazNaloge($resultDataN);
+        prikazNaloge($resultDataN, $currentUserId, $id_predmeta);
 
 
 

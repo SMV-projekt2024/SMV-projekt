@@ -19,17 +19,21 @@
 <div class="createBox">
     <div class="innerCreateBox">
         <h1>Objavi nalogo</h1>
-        <form action="includes/create_post-inc.php" method="post" >
+
+        <?php
+            echo "<form action='includes/create_post-inc.php?id_predmet=" . $_GET["id_predmet"]. "' method='post' enctype='multipart/form-data' >";
+        ?>
+        
             <div class="inputBoxCreate">
-                <input type="text" required name="naslov" id="">
+                <input type="text" required name="naslov" >
                 <label>Naslov</label>
             </div>
             <div class="inputBoxCreate">
-                <input type="text" required name="opis" id="">
+                <input type="text" required name="opis" >
                 <label>Kratek opis (končaj z ...)</label>
             </div>
             <div class="inputBoxCreate">
-                <input type="text" required name="imgUrl" id="">
+                <input type="text" required name="imgUrl" >
                 <label>URL slike</label>
             </div>
 
@@ -40,7 +44,7 @@
             </div>
 
             <div class="inputBoxCreate">
-                <input type="file" name="file">         
+                <input type="file" name="file" required>         
             </div>
             
             <div class="inputBoxCreate">
