@@ -76,7 +76,7 @@ if (isset($_GET["id"])){
 
 
 
-        if ($row = mysqli_fetch_assoc($resultDataPoucevanje) > 0 || roleCheck() == "admin") {
+        if ($dovoljenje || roleCheck() == "admin") {
             echo "<a href='create_post.php?id_predmet=". $id_predmeta ."'><button>Ustvari nalogo</button></a>";
         }
         

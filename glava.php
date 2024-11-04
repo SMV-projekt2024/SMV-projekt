@@ -168,7 +168,7 @@
                 echo"<p> Wrong password </p>";
             }
             else if ($_GET["error"] == "YouCreatedThePost"){
-                echo"<p> Success! You created a post. </p>";
+                echo"<p> Uspešno ustvaril nalogo. </p>";
             }
             else if ($_GET["error"] == "None"){
                 echo"<p> Success! You are signed up. </p>";
