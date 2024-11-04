@@ -1,11 +1,11 @@
 <?php
     require_once "database-inc.php"; 
 
-if (isset($_GET['id_oddaja']) ) {
-    $oddajaId = $_GET["id_oddaja"];
+if (isset($_GET['id_naloga']) ) {
+    $nalogaId = $_GET["id_naloga"];
 
-    $sql = "SELECT * FROM Oddanenaloge
-            WHERE id_oddaja = $oddajaId"; 
+    $sql = "SELECT * FROM Naloge
+            WHERE id_naloga = $nalogaId"; 
     
 
     $statement = mysqli_stmt_init($conn);
@@ -35,7 +35,6 @@ if (isset($_GET['id_oddaja']) ) {
         ob_clean();
         flush();
 
-        // Read the file and output it to the user
         readfile($filePath);
         exit();
     } else {

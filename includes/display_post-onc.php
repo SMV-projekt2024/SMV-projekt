@@ -50,12 +50,6 @@ if (isset($_GET["id"])){
 
         $resultDataN = mysqli_stmt_get_result($statement);
 
-        prikazNaloge($resultDataN, $currentUserId, $id_predmeta);
-
-
-
-
-
         $sql = "SELECT *
                 FROM Poucevanja
                 WHERE id_predmet = $id_predmeta
@@ -67,14 +61,22 @@ if (isset($_GET["id"])){
         }
         mysqli_stmt_execute($statement);
 
-        $resultDataN = mysqli_stmt_get_result($statement);
-        
+        $resultDataPoucevanje = mysqli_stmt_get_result($statement);
+
+        $dovoljenje = mysqli_fetch_assoc($resultDataPoucevanje) > 0;
 
 
 
 
 
-        if ($row = mysqli_fetch_assoc($resultDataN) > 0 || roleCheck() == "admin") {
+        #Priakz nalog
+        prikazNaloge($resultDataN, $currentUserId, $id_predmeta, $dovoljenje);
+
+
+
+
+
+        if ($row = mysqli_fetch_assoc($resultDataPoucevanje) > 0 || roleCheck() == "admin") {
             echo "<a href='create_post.php?id_predmet=". $id_predmeta ."'><button>Ustvari nalogo</button></a>";
         }
         

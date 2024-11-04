@@ -174,7 +174,7 @@ function displayComments($resultData, $currentUser, $conn) {
 }
 
 /*--------------DISPLAY NALOGE---------------*/
-function prikazNaloge($resultData, $currentUserId, $id_predmeta) {
+function prikazNaloge($resultData, $currentUserId, $id_predmeta, $dovoljenje) {
     if (mysqli_num_rows($resultData) > 0) {
         while ($row = mysqli_fetch_assoc($resultData)) {
             require_once "database-inc.php";
@@ -187,7 +187,7 @@ function prikazNaloge($resultData, $currentUserId, $id_predmeta) {
 
             
 
-            if ($currentUserId == $row['id_predmet'] || roleCheck() == "admin") {
+            if ($dovoljenje || roleCheck() == "admin") {
                 echo "<a  href='./pregled_nalog_stran.php?id_naloga=" .$row["id_naloga"]."&id_predmeta=". $id_predmeta . "&type=post' >Preglej</a>";
 
                 echo "<a class='deleteButton' href='includes\delete_naloga-inc.php?id_naloga=" .$row["id_naloga"]."&id_predmeta=". $id_predmeta . "&type=post' ><img class='deleteIcon' src='img\delete-removebg-Outside.png' onmouseover='change(this)' onmouseout='changeback(this)'></a>";

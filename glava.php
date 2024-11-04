@@ -31,7 +31,6 @@
                     if  ( roleCheck() == "admin"){
                         echo"<li><a href='vsi_uporabniki.php'>Vsi uporabniki</a></li>";
                         echo"<li><a href='poucevanja_stran.php'>Učitelji</a></li>";
-                        echo"<li><a href='create_predmet.php'>Nov predmet</a></li>";
                     }
                     
                     echo "<li onclick=showSignIn()><a href='profile_stran.php'><button>Profile</button></a></li>";
@@ -54,7 +53,6 @@
                     if  ( roleCheck() == "admin"){
                         echo"<li class='hideMobile'><a href='vsi_uporabniki.php'>Vsi uporabniki</a></li>";
                         echo"<li class='hideMobile'><a href='poucevanja_stran.php'>Učitelji</a></li>";
-                        echo"<li class='hideMobile'><a href='create_predmet.php'>Nov predmet</a></li>";
 
                     }
                     
@@ -210,6 +208,9 @@
             }
             else if ($_GET["error"] == "NotUploaded"){
                 echo"<p> Napaka pri nalaganju datoteke. </p>";
+            }
+            else if ($_GET["error"] == "EditSuccess"){
+                echo"<p> Uspešno urejanje. </p>";
             }
 
 
