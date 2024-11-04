@@ -1,15 +1,17 @@
 <?php
 
 if ( isset( $_POST["submit"] ) ) {
-    $UserName = $_POST["username"];
+    $ime = $_POST["ime"];
+    $priimek = $_POST["priimek"];
     $email = $_POST["email"];
     $password = $_POST["password"];
     $passwordRepeat = $_POST["passwordRepeat"];
+    $UserName = $_POST["username"];
 
     require_once "database-inc.php";
     require_once "functions-inc.php";
 
-    if ( emptySignUp($UserName, $email, $password, $passwordRepeat) !== false) {
+    if ( emptySignUp($ime, $priimek, $UserName, $email, $password, $passwordRepeat) !== false) {
         header("location: ../prva_stran.php?error=emptyInput");
         exit();
     }
@@ -31,7 +33,7 @@ if ( isset( $_POST["submit"] ) ) {
     }
     /*---add password more than 8 char----------*/
 
-    createUser($conn, $UserName, $email, $password);
+    createUser($conn,$ime, $priimek, $UserName, $email, $password);
 }
 else {
     header("location: ../prva_stran.php");

@@ -34,7 +34,7 @@
                     }
                     
                     echo "<li onclick=showSignIn()><a href='profile_stran.php'><button>Profile</button></a></li>";
-                    echo "<li><a href='includes/signout-inc.php'><button>Logout</button></a></li>";
+                    echo "<li><a href='includes/signout-inc.php'><button>Odjava</button></a></li>";
                     
                 }
                 else{
@@ -56,7 +56,7 @@
                     }
                     
                     echo "<li class='hideMobile'><a href='profile_stran.php'><button>Profile</button></a></li>";
-                    echo "<li class='hideMobile'><a href='includes/signout-inc.php'><button>Logout</button></a></li>";
+                    echo "<li class='hideMobile'><a href='includes/signout-inc.php'><button>Odjava</button></a></li>";
                 }
                 else{
                     echo "<li class='hideMobile' onclick=showSignIn()><a><button>Prijava</button></a></li>";
@@ -97,8 +97,16 @@
                 <h2>Registracija</h2>
                 <form action="includes/signup-inc.php" method="post" novalidate>
                 <div class="inputBox">
+                        <input type="text" required name="ime" id="">
+                        <label>Ime</label>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" required name="priimek" id="">
+                        <label>Priimek</label>
+                    </div>
+                    <div class="inputBox">
                         <input type="text" required name="username" id="">
-                        <label>Uporabniško ime</label>
+                        <label>Username</label>
                     </div>
                     <div class="inputBox">
                         <span class="iconLogin"><svg data-name="Layer 21" height="24" id="Layer_21" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M19,5H5A2,2,0,0,0,3,7V17a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V7A2,2,0,0,0,19,5Zm0,4-7,5L5,9V7l7,5,7-5Z"/></svg>

@@ -19,16 +19,16 @@
     
     if (mysqli_num_rows($resultData) > 0) {
         echo "<table class='tabelaVsi'border='1'>";
-        echo "<tr><th>ID</th><th>Username</th><th>Email</th><th>Role</th></tr>"; 
+        echo "<tr><th>ID</th><th>Ime</th><th>Email</th><th>Role</th></tr>"; 
     
         
         while ($row = mysqli_fetch_assoc($resultData)) {
             echo "<tr>";
            
-            echo "<td>" . htmlspecialchars($row['UsersId']) . "</td>"; 
-            echo "<td>" . htmlspecialchars($row['UsersUsername']) . "</td>"; 
-            echo "<td>" . htmlspecialchars($row['UsersEmail']) . "</td>"; 
-            echo "<td>" . htmlspecialchars($row['UsersRole']) . "</td>"; 
+            echo "<td>" . $row['UsersId'] . "</td>"; 
+            echo "<td>" . $row['UsersIme'] . " ". $row['UsersPriimek'] . "</td>"; 
+            echo "<td>" . $row['UsersEmail'] . "</td>"; 
+            echo "<td>" . $row['UsersRole'] . "</td>"; 
 
             echo "<td>";
 

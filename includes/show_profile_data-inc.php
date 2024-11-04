@@ -19,6 +19,16 @@ $resultData = mysqli_stmt_get_result($statement);
 $row = mysqli_fetch_assoc($resultData);
     
     echo '<div class="profileBox">';
+    echo '<p>Ime:</p>';
+    echo '<p>' . $row["UserIme"] . '</p>';
+    echo '</div>';
+
+    echo '<div class="profileBox">';
+    echo '<p>Priimek:</p>';
+    echo '<p>' . $row["UserPriimek"] . '</p>';
+    echo '</div>';
+
+    echo '<div class="profileBox">';
     echo '<p>Username:</p>';
     echo '<p>' . $row["UsersUsername"] . '</p>';
     echo '</div>';

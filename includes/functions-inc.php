@@ -1,7 +1,7 @@
 <?php   
-function emptySignUp($UserName, $email, $password, $passwordRepeat){
+function emptySignUp($ime, $priimek, $username, $email, $password, $passwordRepeat){
     $result = ""; /* problem? */
-    if (empty($UserName) || empty($email)  || empty($password) || empty($passwordRepeat)){
+    if (empty($ime) || empty($priimek) || empty($username)  || empty($email)  || empty($password) || empty($passwordRepeat)){
         $result = true;
     }
     else {
@@ -61,8 +61,8 @@ function UsernameTaken($conn, $UserName, $email){
 }
 
 
-function createUser($conn, $UserName, $email, $password){
-    $sql = "INSERT INTO Users (UsersEmail, UsersUsername, UsersPassword) VALUES (?, ?, ?);";
+function createUser($conn,$ime, $priimek, $UserName, $email, $password){
+    $sql = "INSERT INTO Users (UsersIme, UsersPriimek, UsersEmail, UsersUsername, UsersPassword) VALUES (?, ?, ?, ?, ?);";
     $statement = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($statement, $sql)){
         header("location: ../prva_stran.php?error=StatementFailed");
@@ -71,7 +71,7 @@ function createUser($conn, $UserName, $email, $password){
 
     $hashPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($statement, "sss", $email, $UserName, $hashPassword);
+    mysqli_stmt_bind_param($statement, "sssss",$ime, $priimek, $email, $UserName, $hashPassword);
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
     header("location: ../prva_stran.php?error=None");

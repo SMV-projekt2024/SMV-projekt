@@ -27,6 +27,16 @@
         
         while ($row = mysqli_fetch_assoc($resultData)) {
             echo '<div class="profileBox">';
+            echo '<p>Ime:</p>';
+            echo '<p>' . $row["UsersIme"] . '</p>';
+            echo '</div>';
+
+            echo '<div class="profileBox">';
+            echo '<p>Priimek:</p>';
+            echo '<p>' . $row["UsersPriimek"] . '</p>';
+            echo '</div>';
+
+            echo '<div class="profileBox">';
             echo '<p>Username:</p>';
             echo '<p>' . $row["UsersUsername"] . '</p>';
             echo '</div>';

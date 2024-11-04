@@ -12,9 +12,8 @@
 require_once "includes/database-inc.php";
 require_once "includes/functions-inc.php";
 
-// Fetch all users securely
 $users = [];
-$user_stmt = $conn->prepare("SELECT UsersId, UsersUsername FROM users WHERE UsersRole = 'creator'");
+$user_stmt = $conn->prepare("SELECT UsersId, UsersIme, UsersPriimek FROM users WHERE UsersRole = 'creator'");
 $user_stmt->execute();
 $result = $user_stmt->get_result();
 while ($row = $result->fetch_assoc()) {
@@ -22,7 +21,6 @@ while ($row = $result->fetch_assoc()) {
 }
 $user_stmt->close();
 
-// Fetch all subjects securely
 $subjects = [];
 $subject_stmt = $conn->prepare("SELECT id_predmet, kratica FROM predmeti");
 $subject_stmt->execute();
@@ -32,7 +30,6 @@ while ($row = $result->fetch_assoc()) {
 }
 $subject_stmt->close();
 
-// Fetch all access permissions securely
 $access = [];
 $access_stmt = $conn->prepare("SELECT id_user, id_predmet FROM poucevanja");
 $access_stmt->execute();
@@ -43,20 +40,22 @@ while ($row = $result->fetch_assoc()) {
 $access_stmt->close();
 ?>
 
-    <h1>Manage User Access to Subjects</h1>
+    <h1>Uredi dostop</h1>
     <table class="dovoljenjaTabela">
         <thead>
             <tr>
                 <th>User</th>
                 <?php foreach ($subjects as $subject): ?>
-                    <th><?php echo htmlspecialchars($subject['kratica']); ?></th>
+                    <th><?php echo $subject['kratica']; ?></th>
                 <?php endforeach; ?>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($users as $user): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($user['UsersUsername']); ?></td>
+                    <td><?php 
+                        echo $user['UsersIme'] . " ". $user['UsersPriimek']; 
+                    ?></td>
                     <?php foreach ($subjects as $subject): ?>
                         <td>
                             <?php

@@ -109,7 +109,7 @@ nav li:first-child {
     transform: translate(-50%, -50%);
     z-index: 100;
     width: 400px;
-    height: 500px;
+    height: 700px;
     background-color: rgba(0, 0, 0, 0.321);
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
