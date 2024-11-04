@@ -185,6 +185,9 @@
             else if ($_GET["error"] == "wrongSignIn"){
                 echo"<p> Uporabnik ne obstaja.</p>";
             }
+            else if ($_GET["error"] == "login"){
+                echo"<p> Prijavi se za dostop.</p>";
+            }
 
 
             echo "</div>";

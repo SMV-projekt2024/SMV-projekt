@@ -6,7 +6,7 @@
     
 
     if (!isset($_SESSION["userId"])) {
-        header("Location: ../prva_stran.php?login");
+        header("Location: ./prva_stran.php?error=login");
     }
     else{
         $currentUserId = $_SESSION["userId"]; 
