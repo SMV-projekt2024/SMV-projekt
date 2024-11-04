@@ -21,7 +21,7 @@
         <h1>Objavi nalogo</h1>
 
         <?php
-            echo "<form action='includes/create_post-inc.php?id_predmet=" . $_GET["id_predmet"]. "' method='post' enctype='multipart/form-data' >";
+            echo "<form action='includes/create_naloga-inc.php?id_predmet=" . $_GET["id_predmet"]. "' method='post' enctype='multipart/form-data' >";
         ?>
         
             <div class="inputBoxCreate">

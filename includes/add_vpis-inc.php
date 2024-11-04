@@ -47,10 +47,17 @@ if ( isset( $_POST["submit"] ) ) {
 
 
 
-            header("location: ../post.php?id=" . $id_predmet);
+            header("location: ../post.php?&id=" . $id_predmet);
+            exit();
         } else {
-            echo "The keys do not match.";
+            header("location: ../kljuc.php?error=KeyNotMatch&id_predmet=" . $id_predmet);
+            exit();
         }
 
+        
+    }
+    else {
+        header("location: ../post.php?id=" . $id_predmet . "&error=KeyNotMatch");
+        exit();
     }
 }

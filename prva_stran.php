@@ -15,7 +15,7 @@
 
         <h1 class="hidden">Spletna Učilnica LLF</h1>
         <p>Vaša učilnica na spletu</p>
-        <a href="sole.php"><button>Preberi 🡺</button></a> <br>
+        <a href="sole.php"><button>Šole 🡺</button></a> <br>
     </div>
 </div>
 

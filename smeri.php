@@ -6,11 +6,7 @@
 <!-- BODY -->
 
 <div class="mainContainer">
-    <form action="" method="get">
-        <input class="searchBar" type="text" name="search" id="" placeholder="Search posts">
-        <button type="submit" name="searchSubmit" >Išči</button>
-
-    </form>
+    <h1 style="color:white">Smeri</h1>
     <div class="postsContainer">
         <?php 
             include("includes\get_smeri-inc.php");

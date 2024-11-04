@@ -33,6 +33,14 @@ if (isset($_GET["id"])){
 
         echo '<p>' .  $row["navodilo"] . '</p>';
 
+        echo "<form action='includes/prenesi_file-inc.php?id_oddaja=" . $row['id_naloga'] . "' method='post' >";
+        echo "<button  type='submit'>Prenesi gradivo</button>";
+        echo "</form>";
+        echo  "<pre> 
+        
+        </pre>";
+
+        echo '<p>Oddaj nalogo</p>';
         echo   '<form action="includes/upload-inc.php?id_naloga='. $id_naloga . '" method="POST" enctype="multipart/form-data">';
         echo '<input type="file" name="file">';
         echo '<button type="submit" name="submit">UPLOAD</button>';

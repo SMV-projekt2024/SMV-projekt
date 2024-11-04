@@ -21,14 +21,14 @@ while ($row = $result->fetch_assoc()) {
 }
 $user_stmt->close();
 
-$subjects = [];
-$subject_stmt = $conn->prepare("SELECT id_predmet, kratica FROM predmeti");
-$subject_stmt->execute();
-$result = $subject_stmt->get_result();
+$predmeti = [];
+$predmet_stmt = $conn->prepare("SELECT id_predmet, kratica FROM predmeti");
+$predmet_stmt->execute();
+$result = $predmet_stmt->get_result();
 while ($row = $result->fetch_assoc()) {
-    $subjects[] = $row;
+    $predmeti[] = $row;
 }
-$subject_stmt->close();
+$predmet_stmt->close();
 
 $access = [];
 $access_stmt = $conn->prepare("SELECT id_user, id_predmet FROM poucevanja");
@@ -45,8 +45,8 @@ $access_stmt->close();
         <thead>
             <tr>
                 <th>User</th>
-                <?php foreach ($subjects as $subject): ?>
-                    <th><?php echo $subject['kratica']; ?></th>
+                <?php foreach ($predmeti as $predmet): ?>
+                    <th><?php echo $predmet['kratica']; ?></th>
                 <?php endforeach; ?>
             </tr>
         </thead>
@@ -56,16 +56,16 @@ $access_stmt->close();
                     <td><?php 
                         echo $user['UsersIme'] . " ". $user['UsersPriimek']; 
                     ?></td>
-                    <?php foreach ($subjects as $subject): ?>
+                    <?php foreach ($predmeti as $predmet): ?>
                         <td>
                             <?php
-                            $hasAccess = isset($access[$user['UsersId']][$subject['id_predmet']]);
+                            $hasAccess = isset($access[$user['UsersId']][$predmet['id_predmet']]);
                             if ($hasAccess): ?>
                                 <!-- Odstrani -->
                                 <form action="includes/dodaj_odstrani_dovoljenje.php" method="POST" style="display:inline;">
                                     <input type="hidden" name="action" value="remove">
                                     <input type="hidden" name="id_user" value="<?php echo $user['UsersId']; ?>">
-                                    <input type="hidden" name="id_predmet" value="<?php echo $subject['id_predmet']; ?>">
+                                    <input type="hidden" name="id_predmet" value="<?php echo $predmet['id_predmet']; ?>">
                                     <button type="submit">Odstrani dostop</button>
                                 </form>
                             <?php else: ?>
@@ -73,7 +73,7 @@ $access_stmt->close();
                                 <form action="includes/dodaj_odstrani_dovoljenje.php" method="POST" style="display:inline;">
                                     <input type="hidden" name="action" value="add">
                                     <input type="hidden" name="id_user" value="<?php echo $user['UsersId']; ?>">
-                                    <input type="hidden" name="id_predmet" value="<?php echo $subject['id_predmet']; ?>">
+                                    <input type="hidden" name="id_predmet" value="<?php echo $predmet['id_predmet']; ?>">
                                     <button type="submit">Dodaj dostop</button>
                                 </form>
                             <?php endif; ?>

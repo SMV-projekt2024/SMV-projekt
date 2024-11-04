@@ -368,7 +368,7 @@ nav li:first-child {
     text-decoration: none;
 }
 .post{
-    flex-basis: 450px;
+    flex-basis: 500px;
     flex-grow: 1;
     background-color: rgb(255, 255, 255);
     padding: 3px;

@@ -31,6 +31,7 @@
                     if  ( roleCheck() == "admin"){
                         echo"<li><a href='vsi_uporabniki.php'>Vsi uporabniki</a></li>";
                         echo"<li><a href='poucevanja_stran.php'>Učitelji</a></li>";
+                        echo"<li><a href='create_predmet.php'>Nov predmet</a></li>";
                     }
                     
                     echo "<li onclick=showSignIn()><a href='profile_stran.php'><button>Profile</button></a></li>";
@@ -53,6 +54,8 @@
                     if  ( roleCheck() == "admin"){
                         echo"<li class='hideMobile'><a href='vsi_uporabniki.php'>Vsi uporabniki</a></li>";
                         echo"<li class='hideMobile'><a href='poucevanja_stran.php'>Učitelji</a></li>";
+                        echo"<li class='hideMobile'><a href='create_predmet.php'>Nov predmet</a></li>";
+
                     }
                     
                     echo "<li class='hideMobile'><a href='profile_stran.php'><button>Profile</button></a></li>";
@@ -196,11 +199,23 @@
             else if ($_GET["error"] == "login"){
                 echo"<p> Prijavi se za dostop.</p>";
             }
+            else if ($_GET["error"] == "UploadSuccess"){
+                echo"<p> Prenos uspešen</p>";
+            }
+            else if ($_GET["error"] == "KeyNotMatch"){
+                echo"<p> Napačen ključ </p>";
+            }
+            else if ($_GET["error"] == "DeleteSuccess"){
+                echo"<p> Uspešen izbris </p>";
+            }
+            else if ($_GET["error"] == "NotUploaded"){
+                echo"<p> Napaka pri nalaganju datoteke. </p>";
+            }
 
 
             echo "</div>";
             echo "</div>";
-        
+            
             
         }
     ?>

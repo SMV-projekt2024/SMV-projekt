@@ -3,13 +3,49 @@ session_start();
 if(isset($_POST['submit'])) {
     $file = $_FILES['file'];
     $currentUserId = $_SESSION["userId"];
-
     
     $id_naloga = $_GET['id_naloga'];
-    
 
+    
     require_once "database-inc.php";
     require_once "functions-inc.php";
+
+
+    #pridobim podatke o uporabniku
+    $sql = "SELECT * FROM Users
+            WHERE UsersId = $currentUserId";
+
+    $statement = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($statement, $sql)){
+        header("location: ../prva_stran.php?error=StatementFailed");
+        exit();
+    }
+    mysqli_stmt_execute($statement);
+    $resultDataUser = mysqli_stmt_get_result($statement);
+    $rowUser = mysqli_fetch_assoc($resultDataUser);
+
+
+
+
+    #vse podatke o nalogi
+    $sql = "SELECT * FROM naloge
+            WHERE id_naloga = $id_naloga";
+
+    $statement = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($statement, $sql)){
+        header("location: ../prva_stran.php?error=StatementFailed");
+        exit();
+    }
+    mysqli_stmt_execute($statement);
+    $resultDataNaloga = mysqli_stmt_get_result($statement);
+
+    $rowNaloga = mysqli_fetch_assoc($resultDataNaloga);
+
+
+
+
+    
+
 
     $fileName = $_FILES['file']["name"];
     $fileTmpName = $_FILES['file']["tmp_name"];
@@ -20,44 +56,45 @@ if(isset($_POST['submit'])) {
     $fileExt = explode(".", $fileName);
     $fileActualExt = strtolower(end($fileExt));
     
-    $allowed = array("jpg", "jpeg", "png", "pdf", "doc");
+    
 
     
     if ($fileError == 0) {
         if ($fileSize < 500000) {
-            $fileNameNew = uniqid("", true) . "." . $fileActualExt;
+            $fileNameNew = $rowUser["UsersIme"]. $rowUser["UsersPriimek"]. "_" . $rowNaloga["naslov"].  $rowNaloga["id_naloga"]. "." . $fileActualExt;
             $fileDestination = "../uploads/" . $fileNameNew;
 
+
             if (move_uploaded_file($fileTmpName, $fileDestination)) {
-                $sql = "INSERT INTO Oddanenaloge(id_ucenec, id_naloga, datoteka)
+                $sql = "REPLACE INTO Oddanenaloge(id_ucenec, id_naloga, datoteka)
                 VALUES(?, ?, ?)";
 
-            $statement = mysqli_stmt_init($conn);
-            if (!mysqli_stmt_prepare($statement, $sql)){
-                header("location: ../prva_stran.php?error=StatementFailed");
-                exit();
-            }
-            mysqli_stmt_bind_param($statement, "iis", $currentUserId, $id_naloga, $fileNameNew);
-            mysqli_stmt_execute($statement);
+                $statement = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($statement, $sql)){
+                    header("location: ../prva_stran.php?error=StatementFailed");
+                    exit();
+                }
+                mysqli_stmt_bind_param($statement, "iis", $currentUserId, $id_naloga, $fileNameNew);
+                mysqli_stmt_execute($statement);
 
 
 
                 
             } else {
-                echo "Failed to move uploaded file.";
+                header("Location: ../naloga.php?id=". $id_naloga . "&error=NotUploaded");
             }
 
-            header("Location: ../naloga.php?id=". $id_naloga . "&status=UploadSuccess");
+            header("Location: ../naloga.php?id=". $id_naloga . "&error=UploadSuccess");
 
 
         }
         else{
-            echo "Your file is too big";
+            header("Location: ../naloga.php?id=". $id_naloga . "&error=NotUploaded");
         }
 
     }
     else{
-        echo "There was an error uploading a file";
+        header("Location: ../naloga.php?id=". $id_naloga . "&error=NotUploaded");
         echo $fileError = $_FILES['file']["error"];
     }
 

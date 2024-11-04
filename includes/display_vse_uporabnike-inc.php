@@ -1,7 +1,25 @@
 <?php
     require_once "database-inc.php"; 
 
-    $sql = "SELECT * FROM users"; 
+
+
+    if (isset($_GET["searchSubmit"])) {
+        $search = $_GET["search"];
+        $sql = "SELECT * FROM Users 
+        WHERE CONCAT(UsersIme, UsersPriimek, UsersUsername)LIKE '%$search%'";
+
+        $statement = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($statement, $sql)){
+            header("location: ../prva_stran.php?error=StatementFailed");
+            exit();
+        }
+        mysqli_stmt_execute($statement);
+        $resultData = mysqli_stmt_get_result($statement);
+
+        mysqli_stmt_close($statement); 
+    } 
+    else{
+        $sql = "SELECT * FROM users"; 
     
 
     $statement = mysqli_stmt_init($conn);
@@ -13,6 +31,9 @@
     mysqli_stmt_execute($statement);
 
     $resultData = mysqli_stmt_get_result($statement);
+    }
+
+    
 
 
     
