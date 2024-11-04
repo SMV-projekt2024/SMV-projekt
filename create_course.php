@@ -22,12 +22,17 @@
         <form action="includes/create_post-inc.php" method="post" >
             <div class="inputBoxCreate">
                 <input type="text" required name="ime" id="">
+<<<<<<< Updated upstream
                 <label>Ime predmeta</label>
+=======
+                <label>Ime</label>
+>>>>>>> Stashed changes
             </div>
             <div class="inputBoxCreate">
                 <input type="text" required name="opis" id="">
                 <label>Kratek opis (končaj z ...)</label>
             </div>
+<<<<<<< Updated upstream
 
             <div class="radio-container">
     <div class="radio-item">
@@ -52,6 +57,37 @@
 
     <div class="radio-item">
 y
+=======
+            <div class="radio-container">
+    <!-- Radio option 1 -->
+    <div class="radio-item">
+      <label for="Gim">Gimnazija</label>
+      <input type="radio" id="Gim" name="Sola" value="Gim">
+    </div>
+
+    <!-- Radio option 2 -->
+    <div class="radio-item">
+      <label for="Gvo">GVO</label>
+      <input type="radio" id="Gvo" name="Sola" value="Gvo">
+    </div>
+
+    <!-- Radio option 3 -->
+    <div class="radio-item">
+      <label for="Smm">SMM</label>
+      <input type="radio" id="Smm" name="Sola" value="Smm">
+    </div>
+
+    <!-- Radio option 4 -->
+    <div class="radio-item">
+      <label for="Ker">KER</label>
+      <input type="radio" id="Ker" name="Sola" value="Ker">
+    </div>
+
+    <!-- Radio option 5 -->
+    <div class="radio-item">
+      <label for="Sdl">SDL</label>
+      <input type="radio" id="Sdl" name="Sola" value="Sdl">
+>>>>>>> Stashed changes
     </div>
 
 
