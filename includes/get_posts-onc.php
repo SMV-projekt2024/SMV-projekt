@@ -12,7 +12,6 @@
             $currentUser = "";
         }
 
-        // $all_posts = $conn->query("SELECT * FROM Posts");
         
         
     
@@ -30,7 +29,7 @@
             mysqli_stmt_execute($statement);
             $resultData = mysqli_stmt_get_result($statement);
 
-            displayPosts($resultData, $currentUser);  // function in functions-inc.php
+            displayPosts($resultData, $currentUser);  // functions-inc.php
 
             mysqli_stmt_close($statement); 
         } 

@@ -69,7 +69,7 @@
     
         echo "</table>";
     } else {
-        echo "No users found with 'neki' in their username.";
+        echo "Uporabnikov s tem imenom ni bilo najdenih.";
     }
     
     mysqli_close($conn);
